@@ -1,0 +1,5 @@
+	install npm
+	run command: npm install create-react-app -g
+	create-react-app <app-name>
+	Go inside the directory
+		run command: npm run start / npm start

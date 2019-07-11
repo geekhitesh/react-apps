@@ -1,0 +1,21 @@
+How to eject css modules. run the following command:  npm run eject
+
+You'll have to find the following part in your config/webpack.config.js file:
+
+1. {
+2. test: cssRegex,
+3. exclude: cssModuleRegex,
+4. ...
+5. }
+
+and then edit that entry
+Finally, it should look like this:
+1. {
+2. test: cssRegex,
+3. exclude: cssModuleRegex,
+4. use: getStyleLoaders({
+5. importLoaders: 1,
+6. modules: true,
+7. localIdentName: '[name]__[local]__[hash:base64:5]'
+8. }),
+9. }
